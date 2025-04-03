@@ -1,61 +1,91 @@
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease infinite;
+  overflow: hidden;
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Стили для контейнера */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.upload-section, .files-section {
-    margin: 20px 0;
+.error-message {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+button[type="submit"] {
+  background: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+button[type="submit"]:hover {
+  background: #0056b3;
+  transform: scale(1.05);
 }
 
-#fileList {
-    list-style: none;
-    padding: 0;
+#downloadLinkContainer {
+  margin-top: 20px;
 }
 
-#fileList li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+#downloadLink {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-#fileList li a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-#fileList li a:hover {
-    text-decoration: underline;
-}
-
-#uploadStatus {
-    margin-top: 10px;
-    color: #666;
+#downloadLink:hover {
+  text-decoration: underline;
+  color: #0056b3;
 }
